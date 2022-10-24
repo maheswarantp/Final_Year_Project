@@ -17,14 +17,17 @@ if not os.path.exists('images'):
 
 cap = cv2.VideoCapture(VIDEO_SRC)
 
-
 frame_count = 0
-while cap.isOpened():
+while cap.isOpened():     
     ret, frame = cap.read()
-
     if ret:
         cv2.imwrite(f'images/{frame_count}.jpg', frame)
         frame_count += 1
-        cv2.imshow('frame', frame)
+        cv2.imshow('Frame', frame)         
+        if cv2.waitKey(25) & 0xFF == ord('q'):
+            break
+    else:
+        break
+
 cap.release()
 cv2.destroyAllWindows()
