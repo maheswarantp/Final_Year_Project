@@ -1,3 +1,5 @@
 .venv
 SRC/images
 SRC/output
+SRC/*.avi
+Src/*.mp4
